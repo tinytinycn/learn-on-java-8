@@ -139,15 +139,18 @@ class Scratch {
         GreenApple o9 = (GreenApple) fPlate3.get(); // 在运行时，可能会出现强制类型转化错误
         // why? 下界规定了存放元素的最小粒度的下限，插入对象只要是Fruit或比Fruit类粒度小(例如：派生类)都被允许的。
 
-        // 总结阶段
-        // 出于安全不犯错的前提，我们来理解 PECS （Producer Extends Consumer Super）
-        // 怎样才能最低限度的不犯错误呢？
-        // 使用上界通配符 Producer<? extends T> 首先限定了 Producer类内部"生产"的对象类型都是 T以及T的派生类，而后在Producer类"取出"这些对象并赋值给T以及T的基类对象是安全的。你可以强制类型转化，但这样往往是不安全的。
-        // 使用下界通配符 Consumer<? super T> 首先限定了 Consumer类内部"接收"的对象类型都是 T以及T的基类，而后在Consumer类"放入"一些 T以及T的派生类型的对象并赋值给Consumer类内部 T以及T的基类型的对象是安全的。
+        
     }
 }
-
 ```
+
+**总结:** 
+
+出于安全不犯错的前提，我们来理解 PECS （Producer Extends Consumer Super） 原则，怎样才能最低限度的不犯错误呢？
+
+使用上界通配符 Producer<? extends T> 首先限定了 Producer类内部"生产"的对象类型都是 T以及T的派生类，而后在Producer类"取出"这些对象并赋值给T以及T的基类对象是安全的。你可以强制类型转化，但这样往往是不安全的。
+
+使用下界通配符 Consumer<? super T> 首先限定了 Consumer类内部"接收"的对象类型都是 T以及T的基类，而后在Consumer类"放入"一些 T以及T的派生类型的对象并赋值给Consumer类内部 T以及T的基类型的对象是安全的。
 
 3. 上界通配符 Plate<? extends Fruit> 限定的元素类型区域如下图
 ![upper-bounds](img/upper-bounds.png)
