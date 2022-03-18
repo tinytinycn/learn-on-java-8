@@ -360,3 +360,7 @@ public class CurringTest {
 ```
 
 柯里化有点类似数学中的 f(x,y) = f1(x)f2(y)
+
+# 参考
+
+- [onJava8中文版#函数式编程](https://github.com/prettykernel/OnJava8/blob/main/13-Functional-Programming.md)
