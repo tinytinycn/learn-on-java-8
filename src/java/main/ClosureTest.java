@@ -3,14 +3,7 @@ import java.util.function.IntSupplier;
 class ClosureTest {
     IntSupplier makeFun(int x) {
         int i = 0;
-        // i ++; 编译报错
-        // x ++; 编译报错
-        return new IntSupplier() {
-            @Override
-            public int getAsInt() {
-                return x + i;
-            }
-        };
+        return () -> x + i;
     }
 }
 
