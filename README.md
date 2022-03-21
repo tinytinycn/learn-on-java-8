@@ -1,5 +1,6 @@
 # 学习 on java 8
 
+- [集合 Collections](4-java-collections.md)
 - [泛型 Generic](1-java-generics.md)
 - [函数式编程 Functional Programming](2-java-functional-programming.md)
   - [Java函数式编程的困境](2-java-functional-programming.md#困境)
